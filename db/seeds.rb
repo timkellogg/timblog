@@ -1,7 +1,7 @@
 # Create Articles 
-10.times do |article|
+50.times do |article|
 	title 		= Faker::Lorem.sentence
-	body 		 	= Faker::Lorem.sentence(rand(12..50))
+	body 		 	= Faker::Lorem.sentence(1000)
 	image_url = Faker::Avatar.image
 
 	Article.create!(

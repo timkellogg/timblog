@@ -7,3 +7,24 @@ h1 {
 p {
 	font-family: 'Tinos';
 }
+
+dl dt {
+	font-size: 1.8em;
+	font-weight: bold;
+}
+
+dl dd {
+		font-weight: lighter;
+		font-size: 1.6em;
+}
+
+#logo {
+	color: gold;
+}
+
+.individual-article {
+	&:hover {
+		background-color: #FAFAFA;
+		opacity: .8;
+	};
+}

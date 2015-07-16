@@ -1,17 +1,15 @@
 <% provide(:title, @article.title) %>
 
-<% if @article.image_url? %>
-<div data-interchange="[<%= @article.image_url %>, (small)], [<%= @article.image_url %>, (medium)], [<%= @article.image_url %>, (large)]">
-  <div data-alert class="alert-box secondary radius">
-    This is the default content.
-    <a href="#" class="close">&times;</a>
-  </div>
-</div>
-<% end %> 
+
 
 <h1><%= @article.title %></h1>
-<process.stdin
+<% if current_user.try(:admin) %>
+	<div class="row edit-controls-bar">
+		<%= link_to 'Edit', edit_article_path(@article), class: "button" %>
+		<%= link_to 'Destroy', @article, class: "button alert", :method => :delete, :data => { confirm: 'Are you sure?'} %>
+	</div>
+<% end %>
 
 <div class="article-body">
-	<p><%= @article.body %></p>
+	<%= @article.body.html_safe %>
 </div>

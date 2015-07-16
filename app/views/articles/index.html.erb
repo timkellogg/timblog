@@ -1,21 +1,13 @@
-
 <h1 class="text-center">talks</h1>
 
-<% if @articles.any? %>
-	<div class="small-12 small-centered">
-		<% @articles.each_with_index do |article, index| %>
-			<dl>
-				<dt><%= article.title %></dt>
-				<dd><%= truncate(article.body, length: 200) %>
-						<%= link_to '...more', article_path(article) %>
-				</dd>
-				<% if user_signed_in? %>
-					<p><%= link_to 'Edit', edit_article_path(article) %></p>
-				<% end %>
-			</dl>
-		<% end %>
-	</div>	
-<% else %>
-	<p>No articles :(</p>
-<% end %>
+<div id="articles-list" class="small-12 small-centered columns">
+	<%= render @articles %>
+</div>	
+
+<%= will_paginate @articles %>
+
+
+
+
+
 

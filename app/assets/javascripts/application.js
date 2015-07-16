@@ -13,8 +13,20 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require froala_editor.min.js
+//= require ckeditor/init
 //= require turbolinks
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+$(document).ready(function() {
+  if ($('.pagination').length) {
+    $(window).scroll(function() {
+      var url = $('.pagination .next_page').attr('href');
+      if (url && $(window).scrollTop() > $(document).height() - $(window).height() - 50) {
+        $('.pagination').text("Please Wait...");
+        return $.getScript(url);
+      }
+    });
+    return $(window).scroll();
+  }
+});

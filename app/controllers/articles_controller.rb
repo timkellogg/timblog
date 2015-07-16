@@ -1,7 +1,8 @@
 class ArticlesController < ApplicationController
+ before_filter :authenticate_user!, except: [:index, :show]
 
 	def index
-		@articles = Article.all 
+		@articles = Article.paginate(page: params[:page], per_page: 3).order('created_at DESC') 
 	end
 
 	def show 
@@ -36,6 +37,9 @@ class ArticlesController < ApplicationController
 	end
 
 	def destroy
+		@article = Article.find(params[:id])
+		@article.destroy 
+		redirect_to root_url 
 	end
 
 	private
