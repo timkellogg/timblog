@@ -2,7 +2,14 @@ class ArticlesController < ApplicationController
  before_filter :authenticate_user!, except: [:index, :show]
 
 	def index
-		@articles = Article.paginate(page: params[:page], per_page: 3).order('created_at DESC') 
+		if params[:tag]
+			@articles = Article.tagged_with(params[:tag])
+			                   .order('created_at DESC')
+			                   .paginate(page: params[:page], per_page: 3)
+		else 
+			@articles = Article.order('created_at DESC')
+			                   .paginate(page: params[:page], per_page: 3)
+		end
 	end
 
 	def show 
@@ -45,6 +52,6 @@ class ArticlesController < ApplicationController
 	private
 
 		def article_params 
-			params.require(:article).permit(:title, :body, :img_url)
+			params.require(:article).permit(:title, :body, :img_url, :tag_list)
 		end
 end
