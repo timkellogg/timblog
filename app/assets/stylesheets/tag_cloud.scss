@@ -1,18 +1,22 @@
 /* Styles for the tag cloud */
 
 #tag_cloud {
-	margin: 20px;
+  margin: 20px;
   line-height: 1.6em;
   font-family: 'Droid Serif';
+
   .s { 
-  	font-size: 0.8em;
-  	color: orange; 
+    font-size: 0.8em;
+    color: darken(#FFF, 20%);
   }
+
   .m { 
-  	font-size: 1.2em; 
-  	color: blue;
+    font-size: 1.6em; 
+    color: darken(#FFF, 40%);
   }
+
   .l { 
-  	font-size: 1.8em; 
+    font-size: 2.4em; 
+    color: darken(#FFF, 60%);
   }
 }
