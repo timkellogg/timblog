@@ -3,12 +3,9 @@ class ArticlesController < ApplicationController
 
 	def index
 		if params[:tag]
-			@articles = Article.tagged_with(params[:tag])
-			                   .order('created_at DESC')
-			                   .paginate(page: params[:page], per_page: 3)
+			@articles = Article.tagged_with(params[:tag]).order('created_at DESC').paginate(page: params[:page], per_page: 3)
 		else 
-			@articles = Article.order('created_at DESC')
-			                   .paginate(page: params[:page], per_page: 3)
+			@articles = Article.order('created_at DESC').paginate(page: params[:page], per_page: 3)
 		end
 	end
 
@@ -52,6 +49,6 @@ class ArticlesController < ApplicationController
 	private
 
 		def article_params 
-			params.require(:article).permit(:title, :body, :img_url, :tag_list)
+			params.require(:article).permit(:title, :body, :img_url, :tag_list, :css_class)
 		end
 end

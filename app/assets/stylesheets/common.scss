@@ -1,3 +1,5 @@
+@import 'foundation_and_overrides.scss'; 
+
 /* Typography 
 ********************/
 
@@ -5,4 +7,19 @@ h1, h2, h3, h4, h5, p, li, dl, dt {
 	letter-spacing: 1px;
 }
 
+/* Labels 
+********************/
+
+
+
+.bright {
+  padding:7px 16px 9px;
+  font-size:13px;
+  background-color:yellow;
+  border-radius:4px;
+}
+
+.default {
+	@extend .label;
+}
 

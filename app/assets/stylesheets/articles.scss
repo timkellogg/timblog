@@ -3,19 +3,20 @@ h1 {
 	font-size: 4em;
 }
 
-
 p {
 	font-family: 'Droid Serif';
 }
 
-dl dt {
-	font-size: 1.8em;
-	font-weight: bold;
-}
+dl {
+	dt {
+		font-size: 1.8em;
+		font-weight: bold;
+	}
 
-dl dd {
+	dd {
 		font-weight: lighter;
 		font-size: 1.6em;
+	}
 }
 
 #logo {
