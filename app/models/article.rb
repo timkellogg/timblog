@@ -2,6 +2,10 @@ class Article < ActiveRecord::Base
   has_many :taggings
   has_many :tags, through: :taggings
 
+  validates :title, presence: true
+  validates :body,  presence: true 
+  
+
   def self.tagged_with(name)
     Tag.find_by_name!(name).articles
   end
