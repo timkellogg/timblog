@@ -16,7 +16,12 @@
     </div>
 
   <% end %>
- 
+
+  <p>
+    <%= f.check_box :published %>
+    <%- f.label :check_box %>
+  </p>
+
   <p>
     <%= f.label :tag_list %>
     <%= f.text_field :tag_list %>
