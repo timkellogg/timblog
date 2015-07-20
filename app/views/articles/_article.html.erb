@@ -1,7 +1,7 @@
 <dl class="individual-article">
 	<dt><%= article.title %> 
 	<% if current_user.try(:admin) %>
-		| <%= link_to 'Edit', edit_article_path(article) %>
+		| <span class="admin-edit"><%= link_to 'Edit', edit_article_path(article) %></span>
 	<% end %><br> 
 	<span class="article-tags">
 		<%= raw article.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></span>
