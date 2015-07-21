@@ -1,3 +1,4 @@
 <%= render 'form' %>
 
+<%= link_to 'Destroy', @article, class: "button alert", :method => :delete, :data => { confirm: 'Are you sure?'} %>
 <%= link_to 'Back to Article', article_path(@article), class: "button" %>

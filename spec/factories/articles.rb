@@ -1,7 +1,13 @@
 FactoryGirl.define do
-  factory :article do
+
+  factory :article do  
    	title 'Title'
    	body  'Content'
-  end
+
+   	factory :published do 
+   		published true 
+  	end
+  end 
 end
 
+	

@@ -4,7 +4,7 @@
 		title: 			Faker::Lorem.sentence,
 		body:  			Faker::Lorem.sentence(1000),
 		image_url: 	Faker::Avatar.image,
-		published:  true 
+		published:  [true, false].sample 
 	)
 end
 
