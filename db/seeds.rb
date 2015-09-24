@@ -9,7 +9,7 @@
 end
 
 
-TAGS = %w[programming education politics sports science exercising music ruby javascript rails funny ember dating] 
+TAGS = %w[programming education politics sports science exercising music ruby javascript rails funny ember life] 
 
 # Create tags and add them to articles 
 TAGS.length.times do |n|

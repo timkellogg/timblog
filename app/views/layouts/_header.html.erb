@@ -14,6 +14,7 @@
     	<% end %>
     	<% if current_user.try(:admin) %>
     		<li class="has-form"><%= link_to 'New Article', new_article_path, class: "button" %></li>
+        <li class="has-form"><%= link_to 'Unpublished Articles', unpublished_path, class: "button" %></li>
     	<% end %>
     	<% if user_signed_in? %>
     		<li class="has-form"><%= link_to 'Logout', destroy_user_session_path, :method => :delete, class: "button" %></li>

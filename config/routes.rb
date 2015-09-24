@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 	
 	resources :articles 
 
-  match '/about',   to: 'static_pages#about',   via: 'get'
-  match '/resume',  to: 'static_pages#resume',  via: 'get'
+	match '/unpublished', to: 'articles#unpublished_articles', via: 'get'
+
+  match '/about',  		  to: 'static_pages#about',            via: 'get'
+  match '/resume', 		  to: 'static_pages#resume',           via: 'get'
 end
