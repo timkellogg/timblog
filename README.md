@@ -14,7 +14,7 @@ _timblog is a blogging application written in Ruby for the Rails framework._
 * `cd` into the root of the app
 * `rake db:setup` to create db and run migrations
 * `rake db:seed` to seed the db
-* `ruby app.rb` to start the server
+* `rails s` to start the server
 * `rspec` to test both integration and libraries
 
 ### Technologies Used
