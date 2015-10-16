@@ -24,7 +24,11 @@ group :development, :test do
   gem 'capybara'
 	gem "factory_girl_rails", 		"~> 4.0"
 	gem 'database_cleaner'
-    gem 'selenium-webdriver'
+  gem 'selenium-webdriver'
+  gem 'shoulda-matchers', github: 'thoughtbot/shoulda-matchers'
 end
 
+group :test do  
+  gem 'launchy'
+end
 

@@ -7,7 +7,6 @@
 	</ul>
 
   <section class="top-bar-section">
-  <!-- Right Nav Section -->
   	<ul class="right">
   		<% if !user_signed_in? %>
     		<li class="active has-form"><%= link_to 'Login', new_user_session_path, class: "button" %></li>
@@ -20,8 +19,6 @@
     		<li class="has-form"><%= link_to 'Logout', destroy_user_session_path, :method => :delete, class: "button" %></li>
     	<% end %>
   	</ul>
-
-    <!-- Left Nav Section -->
     <ul>
     	<li class="has-form"><%= link_to 'Home', root_url %></li>
 			<li class="has-form"><%= link_to 'About', about_path %></li>

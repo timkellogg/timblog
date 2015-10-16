@@ -1,6 +1,0 @@
-== README
-
-Add Tags and have them output as foundation tags 
-
-Add published boolean to only display what you want to be shown 
-

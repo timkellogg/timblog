@@ -1,6 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe "SignOuts", type: :request do
+describe "the signout process" do 
+
   describe "the sign out path" do
     it "signs out a user and redirects to root page" do
     	user = FactoryGirl.create(:user, :email => 'user@gmail.com', :password => 'password')
@@ -12,7 +13,6 @@ RSpec.describe "SignOuts", type: :request do
       expect(current_path).to eq '/' 
 
       click_link 'Logout'
-
     end
   end
 end

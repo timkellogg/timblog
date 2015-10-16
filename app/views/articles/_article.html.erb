@@ -1,6 +1,6 @@
 <% if !article.published && current_user.try(:admin) %>
 	<dl class="individual-article unpublished">
-		<dt><%= article.title %> 
+		<dt><%= article.title %> <%= time_ago_in_words(article.created_at) %> ago
 		<% if current_user.try(:admin) %>
 			| <span class="admin-edit"><%= link_to 'Edit', edit_article_path(article) %></span>
 		<% end %><br> 

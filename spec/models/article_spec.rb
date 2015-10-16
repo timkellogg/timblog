@@ -1,6 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe Article, type: :model do
+describe Article do
+
+	it { should have_many :taggings }
+	it { should have_many :tags }
   
 	context 'with no title' do 
 		it 'should be invalid' do 

@@ -28,6 +28,6 @@ end
 # Create admin user 
 User.create!(
 	email: 'tim.kellogg@gmail.com',
-	password: 'l@kers24',
+	password: 'password',
 	admin: true 
 )

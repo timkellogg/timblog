@@ -1,7 +1,6 @@
 require 'rails_helper'
 
-
-RSpec.describe "SignIns", type: :request do
+describe "the authentication process" do 
 
   describe "the sign in path" do
   	let(:user) 			   { FactoryGirl.create(:user)      }
