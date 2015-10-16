@@ -13,12 +13,11 @@
   </head>
 
   <body>
-
-  	<%= render 'layouts/header' %>
-
     <% flash.each do |key, value| %>
       <div class="alert-box <%= key %>"><%= value %></div>
     <% end %>
+
+  	<%= render 'layouts/header' %>
 
   	<div id="main-content" class="row"> 
     	<%= yield %>
