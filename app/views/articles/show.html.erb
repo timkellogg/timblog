@@ -1,18 +1,20 @@
 <% provide(:title, @article.title) %>
 
-<h1 class="huge-line-height"><%= @article.title %></h1>
-<blockquote><%= (@article.created_at).strftime("%B %-d, %Y at %l:%M %p")%> </blockquote>
+
+<h1 class="text-center"><%= @article.title %></h1>
+<div class="row text-center">
+  <%= image_tag @article.picture.url if @article.picture? %>
+</div>
+<p class="text-center"><%= (@article.created_at).strftime("%B %-d, %Y at %l:%M %p")%> </p>
 <% if current_user.try(:admin) %>
-	<div class="row edit-controls-bar">
-		<%= link_to 'Edit', edit_article_path(@article), class: "button" %>
-		<%= link_to 'Destroy', @article, class: "button alert", :method => :delete %>
-	</div>
+  <div class="row edit-controls-bar text-center">
+    <%= link_to 'Edit', edit_article_path(@article), class: "button" %>
+    <%= link_to 'Destroy', @article, class: "button alert", :method => :delete %>
+  </div>
 <% end %>
+
 
 <div class="article-body">
 	<p><%= @article.body.html_safe %></p>
 </div>
 
-<div class="row text-center">
-	
-</div>

@@ -14,7 +14,7 @@
 
   <body>
     <% flash.each do |key, value| %>
-      <div class="alert-box <%= key %>"><%= value %></div>
+      <div id="flash-msg" class="alert-box <%= key %>"><%= value %></div>
     <% end %>
 
   	<%= render 'layouts/header' %>

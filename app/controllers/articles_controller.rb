@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
 		@articles = Article.order('created_at DESC').paginate(page: params[:page], per_page: 3).where(published: false)
 	end
 
-	def show 
+  def show 
 	end
 
 	def new
