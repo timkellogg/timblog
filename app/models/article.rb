@@ -3,6 +3,10 @@ class Article < ActiveRecord::Base
   has_many :tags, through: :taggings
 
   validates_presence_of :title, :body
+  validate  :picture_size
+
+  # upload real-images 
+  mount_uploader :picture, PictureUploader
 
   def self.tagged_with(name)
     Tag.find_by_name!(name).articles
@@ -22,4 +26,12 @@ class Article < ActiveRecord::Base
       Tag.where(name: n.strip).first_or_create!
     end
   end
+
+  private 
+
+    def picture_size
+      if picture.size > 3.megabytes
+        errors.add(:picture, "should be less than 3 MB")
+      end
+    end
 end

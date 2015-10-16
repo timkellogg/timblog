@@ -14,7 +14,8 @@ gem 'will_paginate'
 gem 'foundation-rails'
 gem 'faker'
 gem 'ckeditor'
-gem 'paperclip'
+gem 'carrierwave',             '0.10.0'
+gem 'mini_magick',             '3.8.0'
 
 group :development, :test do
   gem 'byebug'
@@ -23,7 +24,6 @@ group :development, :test do
   gem 'spring'
 	gem 'database_cleaner'
   gem 'selenium-webdriver'
-
 end
 
 group :test do  
