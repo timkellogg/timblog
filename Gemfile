@@ -21,14 +21,15 @@ group :development, :test do
   gem 'web-console', 						'~> 2.0'
   gem 'rspec-rails'
   gem 'spring'
-  gem 'capybara'
-	gem "factory_girl_rails", 		"~> 4.0"
 	gem 'database_cleaner'
   gem 'selenium-webdriver'
-  gem 'shoulda-matchers', github: 'thoughtbot/shoulda-matchers'
+
 end
 
 group :test do  
+  gem 'capybara'
   gem 'launchy'
+  gem "factory_girl_rails",     "~> 4.0"
+  gem 'shoulda-matchers', github: 'thoughtbot/shoulda-matchers'
 end
 
